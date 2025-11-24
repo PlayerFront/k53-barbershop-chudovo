@@ -26,7 +26,7 @@ const CookiesPolicy = () => {
                     </div>
                     <div className="definition-item">
                         <span className="definition-item__term">Веб-сайт</span>
-                        <span className="definition-item__description">относится к К53, доступный по <a href="https://k53-barbershop-chudovo.netlify.app/" target="_blank">https://k53-barbershop-chudovo.netlify.app/</a></span>
+                        <span className="definition-item__description">относится к К53, доступный по <a href="https://playerfront.github.io/k53-barbershop-chudovo/" target="_blank">https://playerfront.github.io/k53-barbershop-chudovo/</a></span>
                     </div>
                 </div>
             </section>
@@ -112,9 +112,9 @@ const CookiesPolicy = () => {
                     <a href="https://clck.ru/3PvDJh" target="_blank" className="browser-link">Microsoft Edge</a>
                     <a href="https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored" target="_blank" className="browser-link">Firefox</a>
                     <a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" className="browser-link">Safari</a>
-                                    <div className="cookie-warning">
-                    <p><strong>Обратите внимание:</strong> Отключение необходимых cookies может привести к некорректной работе сервиса онлайн-записи.</p>
-                </div>
+                    <div className="cookie-warning">
+                        <p><strong>Обратите внимание:</strong> Отключение необходимых cookies может привести к некорректной работе сервиса онлайн-записи.</p>
+                    </div>
                 </div>
             </section>
 
@@ -122,7 +122,7 @@ const CookiesPolicy = () => {
                 <h2 className="cookies-policy__section-title">Контакты</h2>
                 <div className="contact-methods">
                     <p>По телефону: <a href="tel:+7996939902" className="contact-link">+7 (996) 939-99-02</a></p>
-                    <p>Через сайт: <a href="https://k53-barbershop-chudovo.netlify.app/" target="_blank" className="contact-link">https://k53-barbershop-chudovo.netlify.app/</a></p>
+                    <p>Через сайт: <a href="https://playerfront.github.io/k53-barbershop-chudovo/" target="_blank" className="contact-link">https://playerfront.github.io/k53-barbershop-chudovo//</a></p>
                 </div>
             </section>
         </div>
