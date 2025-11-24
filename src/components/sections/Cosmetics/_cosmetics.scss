@@ -1,0 +1,62 @@
+@import '../../../styles/abstract/variables';
+@import '../../../styles/abstract/mixins';
+
+.cosmetics {
+    margin-block-start: $spacing-mobile-60;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-mobile-30;
+
+    @include desktop {
+        margin-block-start: $spacing-desktop-120;
+        gap: $spacing-desktop-60;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-mobile-10;
+
+        @include desktop {
+            gap: $spacing-desktop-15;
+        }
+    }
+
+    &__title {
+        @include section-title;
+    }
+
+    &__description {
+        @include card-style;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include desktop {
+            gap: 15px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: $color-accent;
+        }
+    }
+
+    &__text {
+        font-size: $font-size-mobile-16;
+
+        @include desktop {
+            font-size: $font-size-desktop-20;
+        }
+    }
+
+    &__disclaimer {
+        font-size: $font-size-mobile-14;
+        text-align: center;
+
+        @include desktop {
+            font-size: $font-size-desktop-16;
+        }
+    }
+}

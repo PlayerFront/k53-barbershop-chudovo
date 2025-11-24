@@ -1,0 +1,44 @@
+@import '../../../../styles/abstract/variables';
+@import '../../../../styles/abstract/mixins';
+
+.hero {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-block-end:83px;
+    position: relative;
+    z-index: 2;
+
+    @include desktop {
+        margin-block-end:80px;
+        margin-block-start:185px;
+    }
+
+    &__title {
+        font-size: $font-size-mobile-32;
+        font-weight: $font-weight-reg;
+        margin-block-end: 35px;
+
+        @include desktop {
+            font-size: $font-size-desktop-48;
+            margin-block-end: 30px;
+            line-height: 3.5rem;
+        }
+    }
+    &__br-desktop {
+        display: none;
+
+        @include desktop {
+            display: block;
+        }
+    }
+    &__guarantee {
+        font-size: $font-size-mobile-20;
+        margin-block-end: 59px;
+
+        @include desktop {
+            font-size: $font-size-desktop-32;
+            margin-block-end: 70px;
+        }
+    }
+}

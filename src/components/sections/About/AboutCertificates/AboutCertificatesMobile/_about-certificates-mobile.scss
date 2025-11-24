@@ -1,0 +1,31 @@
+@import '../../../../../styles/abstract/variables';
+@import '../../../../../styles/abstract/mixins';
+
+.about-certificates-mobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    align-items: center;
+
+    &__swiper {
+        width: 100%;
+        border-radius: $border-radius;
+        min-width: 350px;
+    }
+
+    &__image {
+        border-radius: $border-radius;
+        width: 100%;
+        display: block;
+    }
+
+    &__controls {
+        display: flex;
+        gap: 150px;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}

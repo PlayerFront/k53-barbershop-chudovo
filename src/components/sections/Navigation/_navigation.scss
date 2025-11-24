@@ -1,0 +1,9 @@
+@import '../../../styles/abstract/variables';
+
+.navigation {
+    &__divider {
+        border: none;
+        height: 1px;
+        background-color: $color-accent;
+    }
+}

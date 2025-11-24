@@ -1,0 +1,22 @@
+@import '../../../styles/abstract/variables';
+@import '../../../styles/abstract/mixins';
+
+.privacy-policy {
+
+    &__header {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__date {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: $font-size-desktop-20;
+    }
+
+}
