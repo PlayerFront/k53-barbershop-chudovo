@@ -3,7 +3,7 @@ import YClientsSvg from '../../../assets/icons/yclients-icon.svg'
 const YClientsIcon = () => {
     return (
         <a
-            href="https://n1763817.yclients.com/"
+            href="https://n1763817.yclients.ru/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Записаться на стрижку"

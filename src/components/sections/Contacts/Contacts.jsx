@@ -8,7 +8,7 @@ const Contacts = () => {
     const contactsData = {
         phone: '8 (996) 939-99-02',
         vk: 'https://vk.com/publickom1sx53',
-        yclients: 'https://n1763817.yclients.com',
+        yclients: 'https://n1763817.yclients.ru/',
         adress: 'Новгородская обл., г. Чудово, ул. Парайненская, д.8'
     };
 
