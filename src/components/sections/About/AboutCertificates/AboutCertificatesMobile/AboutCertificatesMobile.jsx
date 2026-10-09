@@ -7,6 +7,7 @@ import CarouselButton from '../../../../ui/CarouselButton/CarouselButton';
 
 import prevBtn from '../../../../../assets/icons/previous-button.svg';
 import nextBtn from '../../../../../assets/icons/next-button.svg';
+import { useState } from 'react';
 
 /**
  * AboutCertificatesMobile - Responsive certificates carousel component for mobile devices
@@ -32,13 +33,18 @@ import nextBtn from '../../../../../assets/icons/next-button.svg';
  * certificate-1-1200.webp   // desktop (fallback)
  */
 const AboutCertificatesMobile = () => {
+    const [loadedImages, setLoadedImages] = useState(new Set());
+
+    const handleImageLoad = (index) => {
+        setLoadedImages(prev => new Set(prev).add(index));
+    }
 
     const certificateImages = Object.values(import.meta.glob('../../../../../assets/images/certs/certificate-*.webp', {
         eager: true,
         query: '?url'
     })).map(item => item.default);
 
-        const getCertificateGroups = () => {
+    const getCertificateGroups = () => {
         const groups = {};
 
         certificateImages.forEach(path => {
@@ -76,6 +82,7 @@ const AboutCertificatesMobile = () => {
                 className="about-certificates-mobile__swiper"
             >
                 {certificateGroups.map((group, index) => {
+                    const isLoaded = loadedImages.has(index);
                     const adaptiveSet = {
                         src: group['400'],
                         srcSet: `
@@ -90,12 +97,18 @@ const AboutCertificatesMobile = () => {
 
                     return (
                         <SwiperSlide key={index}>
-                            <img
-                                {...adaptiveSet}
-                                alt={`Сертификат ${index + 1}`}
-                                className="about-certificates-mobile__image"
-                                loading="lazy"
-                            />
+                            <div className='about-certificates-mobile__image-wrapper'>
+                                {!isLoaded && (
+                                    <div className='about-certificates-mobile__skeleton'/>
+                                )}
+                                <img
+                                    {...adaptiveSet}
+                                    alt={`Сертификат ${index + 1}`}
+                                    className={`about-certificates-mobile__image ${isLoaded ? 'is-loaded' : ''}`}
+                                    onLoad={() => handleImageLoad(index)}
+                                    loading="lazy"
+                                />
+                            </div>
                         </SwiperSlide>
                     )
                 })}

@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './_cosmetics-gallery.scss';
@@ -33,6 +34,12 @@ import nextBtn from '../../../../assets/icons/next-button.svg';
  */
 
 const CosmeticsGallery = () => {
+    const [loadedImages, setLoadedImages] = useState(new Set());
+
+    const handleImageLoad = (index) => {
+        setLoadedImages(prev => new Set(prev).add(index));
+    }
+
     const cosmeticsImages = Object.values(import.meta.glob('../../../../assets/images/brands/brand-product-*.webp', {
         eager: true,
         query: '?url'
@@ -45,7 +52,7 @@ const CosmeticsGallery = () => {
             const filename = path.split('/').pop();
             const parts = filename.split('-');
 
-            if(parts.length >= 4 && parts[0] === 'brand' && parts[1] === 'product') {
+            if (parts.length >= 4 && parts[0] === 'brand' && parts[1] === 'product') {
                 const number = parts[2];
                 const size = parts[3].replace('.webp', '');
 
@@ -53,7 +60,7 @@ const CosmeticsGallery = () => {
                 groups[number][size] = path;
             }
         });
- 
+
         return Object.keys(groups)
             .sort((a, b) => parseInt(a) - parseInt(b))
             .map(number => groups[number]);
@@ -84,8 +91,9 @@ const CosmeticsGallery = () => {
             >
 
                 {imageGroups.map((group, index) => {
+                    const isLoaded = loadedImages.has(index);
                     const adaptiveSet = {
-                        src: group['800'], 
+                        src: group['800'],
                         srcSet: `
                             ${group['400']} 400w,
                             ${group['800']} 800w,
@@ -98,12 +106,18 @@ const CosmeticsGallery = () => {
 
                     return (
                         <SwiperSlide key={index}>
-                            <img
-                                {...adaptiveSet}
-                                alt={`Косметика ${index + 1}`}
-                                className="cosmetics-gallery__image"
-                                loading="lazy"
-                            />
+                            <div className='cosmetics-gallery__image-wrapper'>
+                                {!isLoaded && (
+                                    <div className='cosmetics-gallery__skeleton' />
+                                )}
+                                <img
+                                    {...adaptiveSet}
+                                    alt={`Косметика ${index + 1}`}
+                                    className={`cosmetics-gallery__image ${isLoaded ? 'is-loaded' : ''}`}
+                                    onLoad={() => handleImageLoad(index)}
+                                    loading="lazy"
+                                />
+                            </div>
                         </SwiperSlide>
                     );
                 })}
