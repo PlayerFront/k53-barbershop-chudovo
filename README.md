@@ -1,16 +1,66 @@
-# React + Vite
+# Barbershop "K53" - Landing page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern responsive website for barbershop in Chudovo city. Built with React + Vite using modern web technologies.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Fast loading** - optimized images and code
+- **Fully responsive** - from mobile to desktop screens
+- **Modern design** - clean interface with accents
+- **Accessibility** - semantic markup and Aria attributes
+- **Cookies compliance** - GDPR requirements
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Frontend:** React 18, Vite, SCSS
+- **UI Components:** Custom components
+- **Sliders:** Swiper.js
+- **Maps:** Yandex.Maps
+- **Responsive**: Mobile-first approach
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+├── components/ # Reusable components
+│ ├── ui/ # Basic UI components
+│ ├── common/ # Common components (modals, banners)
+│ └── sections/ # Page sections
+├── styles/ # Global styles, mixins and variables
+│ ├── abstracts/ # Mixins and variables
+│ └── base/ # Global styles and reset
+├── assets/ # Images, icons
+└── hooks/ # Custom React hooks
+
+## Screenshots
+
+![Desktop View](/screenshots/desktop.png)
+![Mobile View](/screenshots/mobile.png)
+
+## Live Preview
+
+[**View Live Site**] (https://playerfront.github.io/k53-barbershop-chudovo/)
+
+## Team
+
+- **Design:** [desigdi](https://www.behance.net/desigdi)
+- **Development:** [PlayerFront](https://github.com/PlayerFront)
+
+## Installation & Development
+
+```bash
+# Clone repository
+git clone https://github.com/PlayerFront/barbershop-project.git
+
+# Install dependencies
+npm install
+
+# Development server
+npm run dev
+
+# Production build
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+
+
