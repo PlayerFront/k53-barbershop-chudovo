@@ -4,7 +4,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './_about-certificates-mobile.scss';
 import CarouselButton from '../../../../ui/CarouselButton/CarouselButton';
-
 import prevBtn from '../../../../../assets/icons/previous-button.svg';
 import nextBtn from '../../../../../assets/icons/next-button.svg';
 import { useState } from 'react';

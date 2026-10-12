@@ -7,9 +7,11 @@ import cert4 from '../../../../../assets/images/certs/certificate-4-1200.webp';
 import cert5 from '../../../../../assets/images/certs/certificate-5-1200.webp';
 import cert6 from '../../../../../assets/images/certs/certificate-6-1200.webp';
 import cert7 from '../../../../../assets/images/certs/certificate-7-1200.webp';
+import cert8 from '../../../../../assets/images/certs/certificate-8-1200.webp';
+
 
 const AboutCertificatesDesktop = () => {
-    const certificates = [cert1, cert2, cert3, cert4, cert5, cert6, cert7];
+    const certificates = [cert1, cert2, cert3, cert4, cert5, cert6, cert7, cert8];
 
     return (
         <div className="about-certificates-desktop">
